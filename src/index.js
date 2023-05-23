@@ -1,5 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
+import rootSaga from './redux/sagas/_root.saga';
 
 import { createStore, combineReducers, applyMiddleware } from 'redux';
 // Provider allows us to use redux within our react app
@@ -13,7 +14,7 @@ import store from './redux/store';
 import App from './components/App/App';
 
 // Create the rootSaga generator function
-function* rootSaga() {
+function* lostPetsSaga() {
   yield takeEvery('FETCH_LOST', fetchLostPets);
 }
 
