@@ -17,8 +17,8 @@ import axios from "axios";
   
   }
 
-  function* lostFoundSaga() {
+  function* LostFoundSaga() {
     yield takeEvery('FETCH_LOST', fetchLostPets);
   }
 
-  export  default lostFoundSaga;
+  export  default LostFoundSaga;
