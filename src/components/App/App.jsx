@@ -19,6 +19,7 @@ import InfoPage from '../InfoPage/InfoPage';
 import LandingPage from '../LandingPage/LandingPage';
 import LoginPage from '../LoginPage/LoginPage';
 import RegisterPage from '../RegisterPage/RegisterPage';
+import LostFoundList from '../LostFoundList/LostFoundList';
 
 import './App.css';
 
@@ -67,6 +68,14 @@ function App() {
           >
             <InfoPage />
           </ProtectedRoute>
+
+          <ProtectedRoute
+
+          exact path="/lostpets">
+
+           <LostFoundList />
+
+           </ProtectedRoute>
 
           <Route
             exact
