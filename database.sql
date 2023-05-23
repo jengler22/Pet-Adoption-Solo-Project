@@ -9,28 +9,31 @@ CREATE TABLE "user" (
     "password" VARCHAR (1000) NOT NULL
 );
 
-CREATE TABLE "pet" (
-    "user_id" INT,
-    "name" VARCHAR(255),
-    "city" VARCHAR(255),
-    "breed" VARCHAR(255),
-    "photo" VARCHAR(255),
-    "pet_type_id" INT,
-    "category_id" INT,
-    "is_lost" boolean,
-    "created_at" timestamp
-);
-
 CREATE TABLE "pet_type" (
-    "pet_id" INT,
+    "pet_id" SERIAL PRIMARY KEY,
     "type" VARCHAR(100)
 );
 
-CREATE TABLE "category" (
-    "pet_id" INT,
-    "category" VARCHAR(100)
-);    
     
+CREATE TABLE "pet" (
+    "user_id" SERIAL PRIMARY KEY,
+    "name" VARCHAR(255),
+    "location" Varchar (255),
+    "breed" VARCHAR(255),
+    "photo" VARCHAR(255),
+    "description" VARCHAR(1000),
+    "pet_type_id" INT REFERENCES "pet_type"
+    
+);
+
+CREATE TABLE "lost_found" (
+      "id" SERIAL PRIMARY KEY,
+      "date" INT NOT NULL,
+      "location" VARCHAR (150) NOT NULL,
+      "description" VARCHAR (1000) NOT NULL,
+      "picture" Varchar (100)
+);
+
 
 
 
