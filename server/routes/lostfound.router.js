@@ -5,8 +5,16 @@ const router = express.Router();
 /**
  * GET route template
  */
-router.get('/', (req, res) => {
-  // GET route code here
+router.get('/lost_found', (req, res) => {
+  const query = `SELECT * FROM lost_found ORDER BY "date" DSC`;
+  pool.query(query)
+  .then( result => {
+    res.send(result.rows);
+  })
+  .catch(err => {
+    console.log(`error: get all lost pets`, err);
+    res.sendStatus(500)
+  })
 });
 
 /**
