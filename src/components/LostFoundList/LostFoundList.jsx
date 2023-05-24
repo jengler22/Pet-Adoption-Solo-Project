@@ -23,7 +23,7 @@ function LostFoundList () {
             {lost_found.map( lost => {
                 return(
                     <div key={lost.id}>
-                        {lost.picture}
+                        <h3> {lost.picture} </h3>
                         <p> Date Found: {lost.date} </p>
                         <p> Location: {lost.location} </p>
                         <p> Description {lost.description} </p>

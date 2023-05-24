@@ -12,8 +12,14 @@ function UserPage() {
       <LogOutButton className="btn" />
       <div>
       </div>
-      <button>Cats</button>
-      <button>Dogs</button>
+      <h3>
+        <img src="images/displatcat1.jpg" width = "300" height = "300"/>
+        <button>Cats</button>
+        <img src="images/displaydog1.jpg" width = "300" height = "300"/>
+        <button>Dogs</button>
+        </h3>
+      
+      
     </div>
     
   );
