@@ -18,6 +18,10 @@ function UserPage() {
         <img src="images/displaydog1.jpg" width = "300" height = "300"/>
         <button>Dogs</button>
         </h3>
+
+        <h1>Mission Statment
+       </h1>
+       <p><p>Statement goes here</p></p>
       
       
     </div>

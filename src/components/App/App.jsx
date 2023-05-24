@@ -20,6 +20,8 @@ import LandingPage from '../LandingPage/LandingPage';
 import LoginPage from '../LoginPage/LoginPage';
 import RegisterPage from '../RegisterPage/RegisterPage';
 import LostFoundList from '../LostFoundList/LostFoundList';
+import CatList from '../CatList/CatList';
+import DogList from '../DogList/DogList';
 
 import './App.css';
 
@@ -48,6 +50,18 @@ function App() {
           >
             <AboutPage />
           </Route>
+
+          <Route
+             exact path="/cats"
+             >
+              <CatList />
+             </Route>
+
+          <Route 
+             exact path="/dogs"
+            >
+              <DogList />
+              </Route>    
 
           {/* For protected routes, the view could show one of several things on the same route.
             Visiting localhost:3000/user will show the UserPage if the user is logged in.

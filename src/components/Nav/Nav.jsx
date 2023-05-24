@@ -28,6 +28,14 @@ function Nav() {
               Home
             </Link>
 
+            <Link className="navLink" to="/cats">
+              Cats
+            </Link>
+
+            <Link className="navLink" to="/dogs">
+              Dogs
+            </Link>
+
             <Link className="navLink" to="/lostpets">
               Lost & Found
             </Link>

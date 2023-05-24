@@ -4,7 +4,7 @@ function CatList() {
 
     return(
         <>
-        
+        <h1>Cats</h1>
         </>
     )
 }
