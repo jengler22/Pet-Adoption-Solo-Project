@@ -5,8 +5,8 @@ const router = express.Router();
 /**
  * GET route template
  */
-router.get('/lost_found', (req, res) => {
-  const query = `SELECT * FROM lost_found ORDER BY "date" DSC`;
+router.get('/', (req, res) => {
+  const query = `SELECT * FROM lost_found ORDER BY "date" DESC`;
   pool.query(query)
   .then( result => {
     res.send(result.rows);
