@@ -3,9 +3,13 @@ const pool = require('../modules/pool');
 const router = express.Router();
 
 
-router.get('/', (req, res) => {
-    const query = `SELECT * FROM "pet" JOIN "pet_type" ON "pet".pet_type_id =
-    "pet_type".pet_id WHERE "pet_type"."type" = 'cat'`;
+router.get('/:id', (req, res) => {
+  console.log('jake');
+    const query = `SELECT * FROM "pet" JOIN "pet_type"
+    ON "pet"."pet_type_id"
+    = "pet_type"."pet_id"
+    WHERE "pet_type"."type" = 'Cat';
+  `;
     pool.query(query)
     .then( result => {
       res.send(result.rows);
