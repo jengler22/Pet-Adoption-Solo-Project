@@ -22,6 +22,7 @@ import RegisterPage from '../RegisterPage/RegisterPage';
 import LostFoundList from '../LostFoundList/LostFoundList';
 import CatList from '../CatList/CatList';
 import DogList from '../DogList/DogList';
+import AddLostPet from '../LostFoundList/AddLostPet';
 
 import './App.css';
 
@@ -88,6 +89,14 @@ function App() {
           exact path="/lostpets">
 
            <LostFoundList />
+
+           </ProtectedRoute>
+
+           <ProtectedRoute
+
+          exact path="/lostpetform">
+
+           <AddLostPet />
 
            </ProtectedRoute>
 

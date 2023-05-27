@@ -1,5 +1,6 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
+import { useHistory } from "react-router-dom";
 import lost_found from "../../redux/reducers/lostfound.reducer";
 import LostFoundSaga from "../../redux/sagas/LostFoundSaga";
 
@@ -7,6 +8,7 @@ import LostFoundSaga from "../../redux/sagas/LostFoundSaga";
 function LostFoundList () {
     const dispatch = useDispatch();
     const lost_found = useSelector(store => store.lost_found);
+    const history = useHistory();
 
     useEffect(() => {
         dispatch({ type: 'FETCH_LOST' });
@@ -16,9 +18,15 @@ function LostFoundList () {
     //     console.log(lostToDisplay);
     // }
 
+    const handleAddForm = () => {
+       
+        history.push('lostpetform');
+    }
+
     return(
         <>
         <h1>Lost & Found</h1>
+        <button onClick={handleAddForm} >Add Post</button>
         <section className="lostpets">
             {lost_found.map( lost => {
                 return(
@@ -32,20 +40,8 @@ function LostFoundList () {
                 )
             }) }
         </section>
-        <h1>Lost & Found Form</h1>
-  <form>
-    <label for="date">Date:</label>
-    <input type="date" id="date" name="date" required />
-
-    <label for="location">Location:</label>
-    <input type="text" id="location" name="location" required />
-
-    <label for="description">Description:</label>
-    <textarea id="description" name="description" required></textarea>
-
-    <input type="submit" value="Submit" />
-  </form>
         </>
     )
-}
+        }
+
 export default LostFoundList;
