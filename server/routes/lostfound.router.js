@@ -17,7 +17,7 @@ router.get('/', (req, res) => {
   })
 });
 
-router.post('/', (req, res) => {
+router.post('/:id', (req, res) => {
   const date = req.body.date;
   const location = req.body.location;
   const description = req.body.description;
@@ -46,6 +46,20 @@ router.post('/', (req, res) => {
 //     res.sendStatus(500);
 //   });
 // });
+router.put('/:id', (req, res) => {
+  const id = req.params.id;
+  const { date, location, description } = req.body;
+  const queryText = `UPDATE "lost_found" SET "date" = $1, "location" = $2,
+  "description" = $3 WHERE "id" = $4;`;
+  pool.query(queryText, [date, location, description, id])
+    .then(() => {
+      res.sendStatus(200);
+    })
+    .catch((error) => {
+      console.log('error in PUT:', error);
+      res.sendStatus(500);
+    });
+});
 
 
 
