@@ -4,13 +4,13 @@ const router = express.Router();
 
 
 router.get('/:id', (req, res) => {
+    const id = req.params.id;
   console.log('jake');
     const query = `SELECT * FROM "pet" JOIN "pet_type"
     ON "pet"."pet_type_id"
     = "pet_type"."pet_id"
-    WHERE "pet_type"."type" = 'Cat';
-  `;
-    pool.query(query)
+    WHERE "pet_type"."type" = $1;`;
+    pool.query(query, [id])
     .then( result => {
       res.send(result.rows);
     })

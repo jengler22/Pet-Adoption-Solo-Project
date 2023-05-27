@@ -17,11 +17,36 @@ router.get('/', (req, res) => {
   })
 });
 
-/**
- * POST route template
- */
 router.post('/', (req, res) => {
-  // POST route code here
+  const date = req.body.date;
+  const location = req.body.location;
+  const description = req.body.description;
+  const queryText = `INSERT INTO "lost_found" ("date", "location", "description") 
+                     VALUES ($1, $2, $3)`;
+  pool.query(queryText, [date, location, description])
+    .then(() => {
+      res.sendStatus(200);
+    })
+    .catch((error) => {
+      console.log('error in POST:', error);
+      res.sendStatus(500);
+    });
 });
+// router.post('/', (req, res) => {
+//   const id = req.params.id;
+//   const date = req.body.date;
+//   const location = req.body.location;
+//   const description = req.body.description;
+//   const queryText = `INSERT INTO "lost_found" ("date") ("location") ("description")
+//   VALUES ($1) WHERE "id" = $2;`;
+//   pool.query(queryText, [id, date, location, description]).then((result) => {
+//     res.sendStatus(200);
+//   }).catch((error) => {
+//     console.log('error in POST1');
+//     res.sendStatus(500);
+//   });
+// });
+
+
 
 module.exports = router;
