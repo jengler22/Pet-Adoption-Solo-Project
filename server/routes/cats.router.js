@@ -3,7 +3,7 @@ const pool = require('../modules/pool');
 const router = express.Router();
 
 
-router.get('/:id', (req, res) => {
+router.get('/', (req, res) => {
     const id = req.params.id;
   console.log('jake');
     const query = `SELECT * FROM "pet" JOIN "pet_type"

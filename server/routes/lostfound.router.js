@@ -11,19 +11,20 @@ router.get('/', (req, res) => {
   .then( result => {
     res.send(result.rows);
   })
-  .catch(err => {
-    console.log(`error: get all lost pets`, err);
+  .catch(error => {
+    console.log(`error: get all lost pets`, error);
     res.sendStatus(500)
   })
 });
 
-router.post('/:id', (req, res) => {
-  const date = req.body.date;
-  const location = req.body.location;
-  const description = req.body.description;
+router.post('/', (req, res) => {
+  console.log('oh boy found a problem');
+  // const date = req.body.date;
+  // const location = req.body.location;
+  // const description = req.body.description;
   const queryText = `INSERT INTO "lost_found" ("date", "location", "description") 
                      VALUES ($1, $2, $3)`;
-  pool.query(queryText, [date, location, description])
+  pool.query(queryText, [req.body.date, req.body.location, req.body.description])
     .then(() => {
       res.sendStatus(200);
     })

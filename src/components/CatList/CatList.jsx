@@ -14,10 +14,7 @@ function CatList() {
 
     const displaycats = (catsToDisplay) => {
         console.log(catsToDisplay);
-        // dispatch gets data into redux & sagas
-        // dispatch({ type: 'SET_MOVIE_DETAILS', payload: movieToDisplay })
-        // history.push(`/catDetails/${movieToDisplay.id}`);
-
+        
 
     return(
         <main>
