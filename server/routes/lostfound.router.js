@@ -47,7 +47,7 @@ router.post('/', (req, res) => {
 //     res.sendStatus(500);
 //   });
 // });
-router.put('/:id', (req, res) => {
+router.put('/', (req, res) => {
   const id = req.params.id;
   const { date, location, description } = req.body;
   const queryText = `UPDATE "lost_found" SET "date" = $1, "location" = $2,
@@ -62,10 +62,11 @@ router.put('/:id', (req, res) => {
     });
 });
 
-router.delete('/:id', (req, res) => {
-  const deleteId = req.params.id;
+router.delete('/', (req, res) => {
+  console.log('error in delete 1');
+  // const deleteId = req.params.id;
   let queryText = `DELETE FROM "lost_found" WHERE "id"=$1;`;
-  pool.query(queryText, [deleteId]).then((result) => {
+  pool.query(queryText, [req.user.id, req.query.id]).then((result) => {
       res.sendStatus(200);
   }).catch((error) => {
       console.log(`Error in DELETE ${error}`);

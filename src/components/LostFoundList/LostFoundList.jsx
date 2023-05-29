@@ -26,20 +26,34 @@ function LostFoundList () {
     return(
         <>
         <h1>Lost & Found</h1>
-        <button onClick={handleAddForm} >Add Post</button>
-        <section className="lostpets">
-            {lost_found.map( lost => {
-                return(
-                    <div key={lost.id}>
-                        <h3> {lost.picture} </h3>
-                        <p> Date Found: {lost.date} </p>
-                        <p> Location: {lost.location} </p>
-                        <p> Description {lost.description} </p>
+<button onClick={handleAddForm}>Add Post</button>
+<table>
+  <thead>
+    <tr>
+      <th>Picture</th>
+      <th>Date Found</th>
+      <th>Location</th>
+      <th>Description</th>
+      <th>Edit</th>
+      <th>Delete</th>
+    </tr>
+  </thead>
+  <tbody>
+    {lost_found.map(lost => {
+      return (
+        <tr key={lost.id}>
+          <td>{lost.picture}</td>
+          <td>{lost.date}</td>
+          <td>{lost.location}</td>
+          <td>{lost.description}</td>
+          <td><button>EDIT</button></td>
+          <td><button>Delete</button></td>
+        </tr>
+      )
+    })}
+  </tbody>
+</table>
 
-                    </div>
-                )
-            }) }
-        </section>
         </>
     )
         }
