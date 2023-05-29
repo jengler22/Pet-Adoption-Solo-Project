@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
+import { useHistory } from 'react-router-dom';
 import axios from 'axios';
 
 
@@ -8,9 +9,12 @@ function AddLostPet() {
     const [date, setDate] = useState('');
     const [location, setLocation] = useState('');
     const [description, setDescription] = useState('');
+    const history = useHistory();
 
     const handleSubmit = (event) => {
         event.preventDefault(); 
+        history.goBack();
+
       
         // Dispatch action to trigger the Saga
         dispatch({ type: 'SET_NEW_FORM', payload: { date, location, description } });
