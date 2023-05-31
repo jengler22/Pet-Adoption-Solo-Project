@@ -11,6 +11,7 @@ const passport = require('./strategies/user.strategy');
 const userRouter = require('./routes/user.router');
 const lostFoundRouter = require('./routes/lostfound.router');
 const catsRouter = require('./routes/cats.router.js');
+const dogsRouter = require('./routes/dogs.router.js');
 
 // Body parser middleware
 app.use(bodyParser.json());
@@ -27,6 +28,7 @@ app.use(passport.session());
 app.use('/api/user', userRouter);
 app.use('/api/lost_found', lostFoundRouter);
 app.use('/api/pet', catsRouter);
+app.use('/api/pet', dogsRouter);
 
 // Serve static files
 app.use(express.static('build'));
