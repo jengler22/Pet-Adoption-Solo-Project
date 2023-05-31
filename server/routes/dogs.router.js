@@ -13,8 +13,8 @@ router.get('/', (req, res) => {
       console.log('test route');
     })
     
-    .catch(err => {
-      console.log('Error: get all doga router', err);
+    .catch(error => {
+      console.log('Error: get all doga router', error);
       res.sendStatus(500);
     });
 });
