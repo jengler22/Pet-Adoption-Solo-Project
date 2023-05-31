@@ -48,12 +48,15 @@ router.post('/', (req, res) => {
 //   });
 // });
 router.put('/', (req, res) => {
+  console.log('error in puts');
   const id = req.params.id;
   const { date, location, description } = req.body;
+  
   const queryText = `UPDATE "lost_found" SET "date" = $1, "location" = $2,
   "description" = $3 WHERE "id" = $4;`;
   pool.query(queryText, [date, location, description, id])
     .then(() => {
+      console.log('shiiiit');
       res.sendStatus(200);
     })
     .catch((error) => {

@@ -25,6 +25,7 @@ import DogList from '../DogList/DogList';
 import AddLostPet from '../LostFoundList/AddLostPet';
 
 import './App.css';
+import EditForm from '../LostFoundList/EditForm';
 
 function App() {
   const dispatch = useDispatch();
@@ -97,6 +98,14 @@ function App() {
           exact path="/lostpetform">
 
            <AddLostPet />
+
+           </ProtectedRoute>
+
+           <ProtectedRoute
+
+          exact path="/editform">
+
+           <EditForm />
 
            </ProtectedRoute>
 
