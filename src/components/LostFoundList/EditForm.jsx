@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { useHistory, useParams } from 'react-router-dom';
+import "./EditForm.css";
 
 function EditForm() {
     const { id } = useParams();
@@ -32,12 +33,14 @@ function EditForm() {
 
     return(
         <>
-        <form onSubmit={submitEdit}>
+        <div className="centered-container">
+        <form className="add-lost-pet-form" onSubmit={submitEdit}>
         <input type="date" value={newDate} onChange={(e) => setDate(e.target.value)} />
         <input type="text" value={newLocation} onChange={(e) => setLocation(e.target.value)} />
         <textarea type="text" value={newDescription} onChange={(e) => setDescription(e.target.value)} />
         <button onClick={() => submitEdit()} type="submit">Submit</button>
       </form>
+      </div>
         
         </>
     )
