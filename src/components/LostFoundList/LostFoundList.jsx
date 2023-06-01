@@ -1,9 +1,9 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useHistory, useParams } from "react-router-dom";
-import lost_found from "../../redux/reducers/lostfound.reducer";
-import LostFoundSaga from "../../redux/sagas/LostFoundSaga";
+import "./LostFound.css";
 import axios from "axios";
+
 
 
 function LostFoundList () {
@@ -48,8 +48,8 @@ function LostFoundList () {
     return(
         <>
         <h1>Lost & Found</h1>
-<button onClick={handleAddForm}>Add Post</button>
-<table>
+<button className="add-post-button" onClick={handleAddForm}>Add Post</button>
+<table className="lost-found-table">
   <thead>
     <tr>
       <th>Picture</th>

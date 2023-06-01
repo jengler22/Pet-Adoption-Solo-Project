@@ -5,13 +5,13 @@ import axios from "axios";
   
   
   function* fetchDogs() {
-    // get just cats from DB
+    // get just dogs from DB
     try {
       console.log('test1');
-      const dogPage = yield axios.get('/api/pet');
+      const dogPage = yield axios.get('/api/dog');
       console.log('test 2');
       console.log('get Dogs:', dogPage.data);
-      yield put({ type: 'SET_Dogs', payload: dogPage.data });
+      yield put({ type: 'SET_DOGS', payload: dogPage.data });
        console.log('3333333');
   } catch (e) {
       console.log('get all DOGS SAGA error');
@@ -19,8 +19,8 @@ import axios from "axios";
   
   }
 
-  function* catsListSaga() {
+  function* dogsListSaga() {
     yield takeEvery('FETCH_DOGS', fetchDogs);
   }
 
-  export  default catsListSaga;
+  export  default dogsListSaga;

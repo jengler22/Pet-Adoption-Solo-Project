@@ -1,0 +1,49 @@
+
+.centered-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+
+  .add-lost-pet-form {
+    max-width: 900px; 
+    width: 100%; 
+    padding: 100px; 
+    background-color: #968cee; 
+    border: 15px solid #010000; 
+    border-radius: 8px; 
+  }
+
+
+.add-lost-pet-form {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 40px;
+    max-width: 400px;
+  }
+  
+  .add-lost-pet-form label {
+    font-weight: bold;
+  }
+  
+  .add-lost-pet-form input,
+  .add-lost-pet-form textarea {
+    width: 100%;
+    padding: 10px;
+    border: 5px solid #020000;
+  }
+  
+  .add-lost-pet-form input[type='submit'] {
+    padding: 8px 16px;
+    border: none;
+    background-color: #000080;
+    color: #fff;
+    cursor: pointer;
+  }
+  
+  .add-lost-pet-form input[type='submit']:hover {
+    background-color: #0056b3;
+  }
+  
+  

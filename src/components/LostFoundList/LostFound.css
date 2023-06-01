@@ -1,0 +1,42 @@
+.lost-found-table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  .lost-found-table th,
+  .lost-found-table td {
+    padding: 8px;
+    border: 1px solid #ddd;
+  }
+  
+  .lost-found-table th {
+    background-color: #f2f2f2;
+  }
+  
+  .lost-found-table td {
+    text-align: center;
+  }
+  
+  .lost-found-table button {
+    padding: 4px 8px;
+    border: none;
+    background-color: #000080;
+    color: #fff;
+    cursor: pointer;
+  }
+  
+  .lost-found-table button:hover {
+    background-color: #0056b3;
+  }
+
+  .add-post-button {
+    padding: 8px 16px;
+    border: none;
+    background-color: #000080;
+    color: #fff;
+    cursor: pointer;
+  }
+  
+  .add-post-button:hover {
+    background-color: #0056b3;
+  }

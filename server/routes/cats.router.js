@@ -7,6 +7,8 @@ router.get('/', (req, res) => {
   FROM pet
   WHERE pet_type_id = 1;`;
 
+  
+
   pool.query(query)
     .then(result => {
       res.send(result.rows);

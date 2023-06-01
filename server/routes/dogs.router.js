@@ -5,7 +5,10 @@ const router = express.Router();
 router.get('/', (req, res) => {
   const query = `SELECT *
   FROM pet
-  WHERE pet_type_id = 2;`;
+  WHERE pet_type_id = (
+    SELECT pet_id FROM pet_type WHERE type = 'dog'
+  );`;
+
 
   pool.query(query)
     .then(result => {

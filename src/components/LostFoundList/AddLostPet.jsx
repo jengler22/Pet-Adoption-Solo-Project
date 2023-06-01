@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { useHistory } from 'react-router-dom';
+import './AddLostPet.css';
 import axios from 'axios';
 
 
@@ -26,8 +27,8 @@ function AddLostPet() {
       };
       
 return(
-
-    <form onSubmit={handleSubmit}>
+  <div className="centered-container">
+    <form className="add-lost-pet-form" onSubmit={handleSubmit}>
     <label htmlFor="date">Date:</label>
     <input type="date" id="date" name="date" value={date} onChange={(event) => setDate(event.target.value)} required />
   
@@ -39,6 +40,7 @@ return(
   
     <input type="submit" value="Submit" />
   </form>
+  </div>
   
     )
 }
