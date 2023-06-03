@@ -3,7 +3,7 @@ import axios from 'axios';
 
 function* editForm(action) {
     try {
-        yield axios.put(`/api/lost_found/`, action.payload.id, action.payload);
+        yield axios.put(`/api/lost_found`, action.payload);
     } catch (error) {
         console.log(`Error in PUT for editform`, error);
     }

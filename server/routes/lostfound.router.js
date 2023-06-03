@@ -48,15 +48,18 @@ router.post('/', (req, res) => {
 //   });
 // });
 router.put('/', (req, res) => {
-  console.log('error in puts');
-  const id = req.params.id;
-  const { date, location, description } = req.body;
+
+
+  console.log('register put 1');
+  const formEdit = [req.body.date, req.body.location, req.body.description, req.body.id];
   
+  console.log(req.body)
   const queryText = `UPDATE "lost_found" SET "date" = $1, "location" = $2,
   "description" = $3 WHERE "id" = $4;`;
-  pool.query(queryText, [date, location, description, id])
-    .then(() => {
-      console.log('shiiiit');
+  console.log(queryText, formEdit, req.user)
+  pool.query(queryText, formEdit)
+    .then((result) => {
+      console.log('testing PUT ROUTE');
       res.sendStatus(200);
     })
     .catch((error) => {

@@ -43,6 +43,7 @@ function LostFoundList () {
 
     const toEdit = () => {
         history.push('editform');
+
     }
 
     return(
@@ -68,8 +69,8 @@ function LostFoundList () {
           <td>{lost.date}</td>
           <td>{lost.location}</td>
           <td>{lost.description}</td>
-          <td><button onClick={toEdit} >Edit Post</button></td>
-          <td><button onClick={() => handleDelete(lost.id)}>Delete Post</button></td>
+          <td><button onClick={ toEdit} >Edit Post</button></td>
+          <td><button onClick={() => handleDelete}>Delete Post</button></td>
         </tr>
       )
     })}

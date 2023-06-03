@@ -4,45 +4,44 @@ import { useHistory, useParams } from 'react-router-dom';
 import "./EditForm.css";
 
 function EditForm() {
-    const { id } = useParams();
-    const lost = useSelector(store => store.lost_found);
-    const history = useHistory();
-    const dispatch = useDispatch();
-   
-    const [newDate, setDate] = useState('');
-    const [newLocation, setLocation] = useState('');
-    const [newDescription, setDescription] = useState('');
-    
-    const LostFoundSaga = () => {
-        dispatch({ type: 'FETCH_LOST' });
-    }
+  const { id } = useParams();
+  const lost = useSelector(store => store.lost_found);
+  const history = useHistory();
+  const dispatch = useDispatch();
 
-    useEffect(() => {
-    LostFoundSaga();
-    }, []);
+  const [newDate, setDate] = useState('');
+  const [newLocation, setLocation] = useState('');
+  const [newDescription, setDescription] = useState('');
 
-    const submitEdit = (id) => {
-        dispatch({ type: 'UPDATE_FORM', payload:{ date: newDate, location: newLocation, description: newDescription }});
-        // history.goBack();
-    }
+//   useEffect(() => {
+//     dispatch({ type: '' });
+//   }, []);
 
-    // const goBack = () => {
-    //     history.goBack();
-    // }
+  const submitEdit = (e) => {
+    e.preventDefault();
+    dispatch({
+      type: 'UPDATE_FORM',
+      payload: {
+        id,
+        date: newDate,
+        location: newLocation,
+        description: newDescription
+      }
+    });
+    history.goBack();
+  }
 
-
-    return(
-        <>
-        <div className="centered-container">
-        <form className="add-lost-pet-form" onSubmit={submitEdit}>
+  return (
+    <div className="centered-container">
+      <form className="add-lost-pet-form" onSubmit={submitEdit}>
+        
         <input type="date" value={newDate} onChange={(e) => setDate(e.target.value)} />
         <input type="text" value={newLocation} onChange={(e) => setLocation(e.target.value)} />
         <textarea type="text" value={newDescription} onChange={(e) => setDescription(e.target.value)} />
-        <button onClick={() => submitEdit()} type="submit">Submit</button>
+        <button type="submit">Submit</button>
       </form>
-      </div>
-        
-        </>
-    )
+    </div>
+  );
 }
+
 export default EditForm;

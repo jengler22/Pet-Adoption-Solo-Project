@@ -32,7 +32,7 @@ function UserPage() {
         <button onClick={handleDogoButton} >Dogs</button>
         </h3>
 
-        <h1>Mission Statment
+        <h1 className="statement">Mission Statment
        </h1>
        <p><p>Statement goes here</p></p>
        <LogOutButton className="btn" />
