@@ -20,22 +20,24 @@ function UserPage() {
 
   return (
     <div className="container">
-      <h2>Welcome, {user.username}!</h2>
+      {/* <h2>Welcome, {user.username}!</h2> */}
       {/* <p>Your ID is: {user.id}</p> */}
       
-      <div>
+      <div style={{ display: 'flex', flexDirection: 'row', justifyContent: 'center', alignItems: 'center' }}>
+        <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+          <img src="images/displatcat1.jpg" width="300" height="300" style={{ border: '5px solid black' }} />
+          <button onClick={handleKittyButton} style={{ backgroundColor: '#000080', color: 'white', border: '3px solid black', padding: '10px 20px', margin: '10px', cursor: 'pointer' }}>Cats</button>
+        </div>
+        <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+          <img src="images/displaydog1.jpg" width="300" height="300" style={{ border: '5px solid black' }} />
+          <button onClick={handleDogoButton} style={{ backgroundColor: '#000080', color: 'white', border: '3px solid black', padding: '10px 20px', margin: '10px', cursor: 'pointer' }}>Dogs</button>
+        </div>
       </div>
-      <h3>
-        <img src="images/displatcat1.jpg" width = "300" height = "300"/>
-        <button onClick={handleKittyButton} >Cats</button>
-        <img src="images/displaydog1.jpg" width = "300" height = "300"/>
-        <button onClick={handleDogoButton} >Dogs</button>
-        </h3>
 
         <h1 className="statement">Mission Statment
        </h1>
        <p><p>Statement goes here</p></p>
-       <LogOutButton className="btn" />
+       {/* <LogOutButton className="btn" /> */}
       
       
     </div>

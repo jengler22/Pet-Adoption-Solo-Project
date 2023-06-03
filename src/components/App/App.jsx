@@ -103,7 +103,7 @@ function App() {
 
            <ProtectedRoute
 
-          exact path="/editform">
+          path="/editform/:id">
 
            <EditForm />
 

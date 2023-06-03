@@ -1,23 +1,28 @@
 import { useState, useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { useHistory, useParams } from 'react-router-dom';
+import { useHistory, useLocation, useParams } from 'react-router-dom';
 import "./EditForm.css";
+import lost_found from '../../redux/reducers/lostfound.reducer';
 
 function EditForm() {
   const { id } = useParams();
-  const lost = useSelector(store => store.lost_found);
+  const location = useLocation();
+  const  lostFound  = useSelector(store => store.lost_found);
+  const   lost = lostFound.filter(lost => lost.id==id)[0];
   const history = useHistory();
   const dispatch = useDispatch();
 
-  const [newDate, setDate] = useState('');
-  const [newLocation, setLocation] = useState('');
-  const [newDescription, setDescription] = useState('');
+  const [newDate, setDate] = useState(lost.date);
+  const [newLocation, setLocation] = useState(lost.location);
+  const [newDescription, setDescription] = useState(lost.description);
 
-//   useEffect(() => {
-//     dispatch({ type: '' });
-//   }, []);
+
+  useEffect(() => {
+    console.log('lost:', lostFound, lost);
+  }, []);
 
   const submitEdit = (e) => {
+    console.log('new description', newDescription);
     e.preventDefault();
     dispatch({
       type: 'UPDATE_FORM',
