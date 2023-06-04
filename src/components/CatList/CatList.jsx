@@ -27,6 +27,7 @@ function CatList() {
                         <div key={cats.user_id} >
                             <h3> Name: {cats.name}</h3>
                             <p>Breed: {cats.breed} </p>
+                            <p>Description: { cats.description } </p>
                             <img src={cats.photo} alt={cats.name} />
                             
                             

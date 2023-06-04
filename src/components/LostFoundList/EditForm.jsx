@@ -12,7 +12,7 @@ function EditForm() {
   const history = useHistory();
   const dispatch = useDispatch();
 
-  const [newDate, setDate] = useState(lost.date);
+  const [newDate, setDate] = useState(lost.date.toLocaleString());
   const [newLocation, setLocation] = useState(lost.location);
   const [newDescription, setDescription] = useState(lost.description);
 
