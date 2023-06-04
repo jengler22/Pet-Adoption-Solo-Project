@@ -18,9 +18,9 @@ function DogList() {
 
   return (
     <main>
-      <section className="top">
-        <h1> Dogs List </h1>
-        <h3>put words here</h3>
+      <section className="top" style={{ textAlign: 'center', padding: '20px' }}>
+        <h1 style={{ margin: 0 }}>Dogs List</h1>
+        <h3 style={{ margin: 0 }}>put words here</h3>
         <br />
       </section>
       <Container
@@ -42,6 +42,9 @@ function DogList() {
                 display: 'flex',
                 flexDirection: 'column',
                 alignItems: 'center',
+                border: '5px solid #ccc',
+                borderRadius: '5px',
+                boxShadow: '0 2px 4px rgba(0, 0, 0, 0.1)',
               }}
             >
               <CardContent>
