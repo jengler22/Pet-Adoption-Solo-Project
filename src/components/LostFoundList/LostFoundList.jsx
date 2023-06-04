@@ -3,6 +3,8 @@ import { useDispatch, useSelector } from "react-redux";
 import { Link, useHistory, useParams } from "react-router-dom";
 import "./LostFound.css";
 import axios from "axios";
+const luxon = require('luxon');
+const dateTime = luxon.DateTime;
 
 
 
@@ -45,6 +47,12 @@ function LostFoundList () {
         history.push('editform');
 
     }
+    function transformDate(date) {
+      let time = dateTime.fromISO(date);
+      let year = `${time.year}`;
+      let slice = year.slice(2);
+      return `${time.month}/${time.day}/${slice}`;
+    };
 
     return(
         <>
@@ -66,7 +74,7 @@ function LostFoundList () {
       return (
         <tr key={lost.id}>
           {/* <td>{lost.picture}</td> */}
-          <td>{lost.date}</td>
+          <td>{transformDate(lost.date)}</td>
           <td>{lost.location}</td>
           <td>{lost.description}</td>
           <td>  <Link to= {`editForm/${lost.id}`} state={lost}> <button>Edit post</button></Link>  </td>

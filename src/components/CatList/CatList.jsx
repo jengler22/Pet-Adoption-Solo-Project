@@ -35,12 +35,12 @@ function CatList() {
               key={cat.user_id}
               style={{
                 width: 300,
-                margin: '10px',
+                margin: '80px',
                 display: 'flex',
                 flexDirection: 'column',
                 alignItems: 'center',
-                border: '1px solid #ccc',
-                borderRadius: '5px',
+                border: '15px solid #000080',
+                borderRadius: '15px',
                 boxShadow: '0 2px 4px rgba(0, 0, 0, 0.1)',
               }}
             >
