@@ -1,49 +1,48 @@
 import React from 'react';
 import LogOutButton from '../LogOutButton/LogOutButton';
-import {useSelector} from 'react-redux';
+import { useSelector } from 'react-redux';
 import { useHistory } from 'react-router-dom';
+import { Card, CardContent, Button } from '@mui/material';
 
 function UserPage() {
-  // this component doesn't do much to start, just renders some user reducer info to the DOM
   const user = useSelector((store) => store.user);
   const history = useHistory();
 
   const handleKittyButton = () => {
-    // to cats page
     history.push('cats');
   }
 
   const handleDogoButton = () => {
-    // to dogs page
     history.push('dogs');
   }
 
   return (
     <div className="container">
-      {/* <h2>Welcome, {user.username}!</h2> */}
-      {/* <p>Your ID is: {user.id}</p> */}
-      
+
+      <section style={{ textAlign: 'center', border: '1px solid black' }}>
+        <h1 className="statement">Mission Statement</h1>
+        <p>Statement goes here</p>
+      </section>
+
       <div style={{ display: 'flex', flexDirection: 'row', justifyContent: 'center', alignItems: 'center' }}>
-        <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+        <Card style={{ margin: '10px' }}>
           <img src="images/displatcat1.jpg" width="300" height="300" style={{ border: '5px solid black' }} />
-          <button onClick={handleKittyButton} style={{ backgroundColor: '#000080', color: 'white', border: '3px solid black', padding: '10px 20px', margin: '10px', cursor: 'pointer' }}>Cats</button>
-        </div>
-        <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+          <CardContent>
+            <Button onClick={handleKittyButton} variant="contained" style={{ backgroundColor: '#000080', color: 'white', border: '3px solid black', padding: '10px 20px', cursor: 'pointer' }}>Cats</Button>
+          </CardContent>
+        </Card>
+        <Card style={{ margin: '10px' }}>
           <img src="images/displaydog1.jpg" width="300" height="300" style={{ border: '5px solid black' }} />
-          <button onClick={handleDogoButton} style={{ backgroundColor: '#000080', color: 'white', border: '3px solid black', padding: '10px 20px', margin: '10px', cursor: 'pointer' }}>Dogs</button>
-        </div>
+          <CardContent>
+            <Button onClick={handleDogoButton} variant="contained" style={{ backgroundColor: '#000080', color: 'white', border: '3px solid black', padding: '10px 20px', cursor: 'pointer' }}>Dogs</Button>
+          </CardContent>
+        </Card>
       </div>
 
-        <h1 className="statement">Mission Statment
-       </h1>
-       <p><p>Statement goes here</p></p>
-       {/* <LogOutButton className="btn" /> */}
       
-      
+      {/* <LogOutButton className="btn" /> */}
     </div>
-    
   );
 }
 
-// this allows us to use <App /> in index.js
 export default UserPage;
