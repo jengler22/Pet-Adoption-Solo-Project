@@ -37,13 +37,13 @@ function DogList() {
               key={dog.user_id}
               style={{
                 width: 300,
-                margin: '20px',
+                margin: '80px',
                 display: 'flex',
                 flexDirection: 'column',
                 alignItems: 'center',
-                border: '5px solid #ccc',
-                borderRadius: '5px',
-                boxShadow: '0 2px 4px rgba(0, 0, 0, 0.1)',
+                border: '15px solid #000080',
+                borderRadius: '15px',
+                boxShadow: '0 1px 40px rgba(0, 0, 0, 0.1)',
               }}
             >
               <CardContent>
