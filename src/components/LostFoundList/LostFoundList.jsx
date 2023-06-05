@@ -57,8 +57,10 @@ function LostFoundList () {
     return(
         <>
          <section style={{ textAlign: 'center', border: '1px solid black' }}>
-        <h1 className="statement">vhgjkl</h1>
-        <p>Statement goes here</p>
+        <h1 className="statement">Animal Lost & Found</h1>
+        <p>Whether your family friend wondered a little too far from home,</p>
+        <p>Or you found a stray and you're looking to help them get home.</p>
+        <p>Our lost and found page will show everyone in minnesota what you're looking for.</p>
       </section>
 <button className="add-post-button" onClick={handleAddForm}>Add Post</button>
 <table className="lost-found-table">

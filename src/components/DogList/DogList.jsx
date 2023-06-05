@@ -18,9 +18,9 @@ function DogList() {
 
   return (
     <main>
-      <section style={{ textAlign: 'center', border: '1px solid black' }}>
+      <section style={{ textAlign: 'center', border: '5px solid black' }}>
         <h1 className="statement">Dogs Available For Adoption</h1>
-        <p>Statement goes here</p>
+        
       </section>
       <Container
         className="dogslist"
