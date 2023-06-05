@@ -19,13 +19,14 @@ function UserPage() {
   return (
     <div className="container">
 
-      <section style={{ textAlign: 'center', border: '1px solid black' }}>
-        <h1 className="statement">Mission Statement</h1>
-        <p>Statement goes here</p>
+      <section style={{ textAlign: 'center', border: '5px solid black' }}>
+        <h1 className="statement">Helping Minnesota Pets Find Thier Homes!</h1>
+        <p> Save Them All Minnesota is a website dedicated to helping Minnesotans find their furry loved ones.  We offer adoption services for both Cats and Dogs,
+          as well as helping with the recovery of lost pets in our lost and found area. </p>
       </section>
 
       <div style={{ display: 'flex', flexDirection: 'row', justifyContent: 'center', alignItems: 'center' }}>
-        <Card style={{ margin: '10px' }}>
+        <Card style={{ margin: '20px' }}>
           <img src="images/displatcat1.jpg" width="300" height="300" style={{ border: '5px solid black' }} />
           <CardContent>
             <Button onClick={handleKittyButton} variant="contained" style={{ backgroundColor: '#000080', color: 'white', border: '3px solid black', padding: '10px 20px', cursor: 'pointer' }}>Cats</Button>
