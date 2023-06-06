@@ -9,7 +9,21 @@ function AboutPage() {
   return (
     <div className="container">
       <div>
-        <p>This about page is for anyone to read!</p>
+        <p>Special Thanks:</p>
+        <ul>
+            Prime Academy. </ul>
+            <ul>Instructor: Chris Black.</ul>
+            <ul>Code Coach: Marc Mccarthy.</ul>
+            <ul> Part time office hours team.</ul>
+            <ul></ul>
+            <br />
+            Techologies Used:
+            <ul>React</ul>
+            <ul>Node.js</ul>
+            <ul>Postico</ul>
+            <ul>Material U/I</ul>
+        
+         
       </div>
     </div>
   );

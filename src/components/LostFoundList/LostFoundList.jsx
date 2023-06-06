@@ -58,7 +58,7 @@ function LostFoundList () {
         <>
          <section style={{ textAlign: 'center', border: '1px solid black' }}>
         <h1 className="statement">Animal Lost & Found</h1>
-        <p>Whether your family friend wondered a little too far from home,</p>
+        <p>Whether your family friend wandered a little too far from home,</p>
         <p>Or you found a stray and you're looking to help them get home.</p>
         <p>Our lost and found page will show everyone in minnesota what you're looking for.</p>
       </section>
