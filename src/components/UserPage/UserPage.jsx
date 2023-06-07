@@ -20,7 +20,7 @@ function UserPage() {
     <div className="container">
 
       <section style={{ textAlign: 'center', border: '5px solid black' }}>
-        <h1 className="statement">Helping Minnesota Pets Find Thier Homes!</h1>
+        <h1 className="statement">Helping Minnesota Pets Find Their Homes!</h1>
         <p> Save Them All Minnesota is a website dedicated to helping Minnesotans find their furry loved ones.</p>
          <p> We offer adoption services for both Cats and Dogs,
           as well as helping with the recovery of lost pets. </p>

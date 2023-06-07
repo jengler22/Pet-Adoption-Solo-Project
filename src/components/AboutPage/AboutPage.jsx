@@ -13,15 +13,19 @@ function AboutPage() {
         <ul>
             Prime Academy. </ul>
             <ul>Instructor: Chris Black.</ul>
-            <ul>Code Coach: Marc Mccarthy.</ul>
-            <ul> Part time office hours team.</ul>
+            <ul>Code Coach: Marc McCarthy.</ul>
+            <ul> Part-time office hours team.</ul>
             <ul></ul>
             <br />
             Techologies Used:
             <ul>React</ul>
             <ul>Node.js</ul>
-            <ul>Postico</ul>
+            <ul>Postgres</ul>
             <ul>Material U/I</ul>
+            <br />
+            Future Features:
+            <ul>Search Bar for better usability </ul>
+            <ul>Image upload for lost and found list.</ul>
         
          
       </div>
