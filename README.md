@@ -13,6 +13,7 @@ A cool feature I added is the Lost and Found page, this allows a registered user
 ![screenshot](./public/images/lost.png)
 
 Technologies Used:
-React JS
-Node JS
+React.JS
+Node.JS
 PostgresSQL
+Material UI
